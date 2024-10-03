@@ -167,7 +167,7 @@ def draw_celtic_cross(canvas_frame, text_box, query_entry):
             text_box.insert(tk.END, f"\nTarot Reading:\n{reading}")
             text_box.config(state="disabled")
 
-    threading.Thread(target=update_reading).start()
+    threading.Thread(target=update_reading, daemon=True).start()
 
 def redraw_celtic_cross(canvas, images):
     # [Existing code for redrawing the Celtic Cross layout]
@@ -293,7 +293,7 @@ def draw_one_card(canvas_frame, text_box, query_entry):
             text_box.insert(tk.END, f"\nTarot Reading:\n{reading}")
             text_box.config(state="disabled")
 
-    threading.Thread(target=update_reading).start()
+    threading.Thread(target=update_reading, daemon=True).start()
 
 def redraw_one_card(canvas, images):
     canvas.delete("all")
@@ -358,7 +358,7 @@ def draw_three_cards(canvas_frame, text_box, query_entry):
             text_box.insert(tk.END, f"\nTarot Reading:\n{reading}")
             text_box.config(state="disabled")
 
-    threading.Thread(target=update_reading).start()
+    threading.Thread(target=update_reading, daemon=True).start()
 
 def redraw_three_cards(canvas, images):
     canvas.delete("all")
